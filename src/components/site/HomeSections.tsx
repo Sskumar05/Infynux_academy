@@ -48,24 +48,24 @@ export function HomeSections() {
             transition={{ duration: 0.6 }}
           >
             <span className="eyebrow"><Sparkles className="h-3.5 w-3.5" /> Future-Ready Tech Academy</span>
-            <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--navy)] leading-[1.07]">
+            <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.07]">
               Build Future-Ready Skills With{" "}
-              <span className="text-gradient-gold">INFYNUX Academy</span>
+              <span className="text-gradient-blue">INFYNUX Academy</span>
             </h1>
-            <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
+            <p className="mt-6 text-base md:text-lg text-[var(--muted-foreground)] max-w-xl leading-relaxed">
               Master Web Development, Cloud Computing, App Development, AI &amp; Automation,
               and Digital Marketing through structured learning paths and internships.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/roadmaps"
-                className="btn-gold inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold"
+                className="btn-cta inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold"
               >
                 Explore Roadmaps <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/internships"
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold border border-[var(--navy)]/20 text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold border border-[var(--cyan)]/30 text-[var(--cyan)] hover:bg-[var(--electric)] hover:text-white hover:border-[var(--electric)] transition-all duration-300"
               >
                 Apply Internship
               </Link>
@@ -78,8 +78,8 @@ export function HomeSections() {
                 ["95%", "Satisfaction"],
               ].map(([n, l]) => (
                 <div key={l}>
-                  <div className="text-2xl md:text-3xl font-bold text-[var(--navy)]">{n}</div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">{l}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-white">{n}</div>
+                  <div className="text-xs uppercase tracking-wider text-[var(--muted-foreground)]">{l}</div>
                 </div>
               ))}
             </div>
@@ -91,17 +91,17 @@ export function HomeSections() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="relative"
           >
-            <div className="absolute -inset-6 bg-gradient-to-tr from-[var(--gold)]/20 via-transparent to-[var(--navy)]/10 rounded-[2rem] blur-2xl" />
-            <div className="relative rounded-[1.75rem] overflow-hidden border border-border bg-white shadow-[var(--shadow-elegant)]">
+            <div className="absolute -inset-6 bg-gradient-to-tr from-[var(--electric)]/20 via-transparent to-[var(--cyan)]/10 rounded-[2rem] blur-2xl" />
+            <div className="relative rounded-[1.75rem] overflow-hidden border border-[var(--cyan)]/15 bg-[var(--navy-light)] shadow-[var(--shadow-elegant)]">
               <img src={heroImg} alt="Students learning tech at INFYNUX Academy" className="w-full h-auto" width={1280} height={1024} />
             </div>
-            <div className="absolute -bottom-4 -left-4 hidden sm:flex items-center gap-3 bg-white border border-border rounded-2xl px-4 py-3 shadow-lg">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-[var(--gold)]/15 text-[var(--gold)]">
+            <div className="absolute -bottom-4 -left-4 hidden sm:flex items-center gap-3 bg-[var(--navy-light)]/90 backdrop-blur-xl border border-[var(--cyan)]/15 rounded-2xl px-4 py-3 shadow-lg">
+              <div className="grid h-10 w-10 place-items-center rounded-xl bg-[var(--electric)]/15 text-[var(--cyan)]">
                 <CheckCircle2 className="h-5 w-5" />
               </div>
               <div>
-                <div className="text-sm font-semibold text-[var(--navy)]">Certified Programs</div>
-                <div className="text-xs text-muted-foreground">Industry recognized</div>
+                <div className="text-sm font-semibold text-white">Certified Programs</div>
+                <div className="text-xs text-[var(--muted-foreground)]">Industry recognized</div>
               </div>
             </div>
           </motion.div>
@@ -124,14 +124,14 @@ export function HomeSections() {
                 data-aos-delay={i * 80}
                 className="card-premium p-7 group"
               >
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[var(--gold)]/20 to-[var(--gold)]/5 text-[var(--gold)] border border-[var(--gold)]/20 group-hover:bg-[var(--gold)] group-hover:text-[var(--navy)] transition-colors">
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[var(--electric)]/20 to-[var(--cyan)]/10 text-[var(--cyan)] border border-[var(--cyan)]/15 group-hover:bg-[var(--electric)] group-hover:text-white group-hover:border-[var(--electric)] group-hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all duration-300">
                   <d.icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-[var(--navy)]">{d.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{d.desc}</p>
+                <h3 className="mt-5 text-xl font-bold text-white">{d.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-[var(--muted-foreground)]">{d.desc}</p>
                 <Link
                   to="/roadmaps"
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--navy)] hover:text-[var(--gold)] transition-colors"
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--cyan)] hover:text-[var(--electric)] transition-colors"
                 >
                   Learn More <ChevronRight className="h-4 w-4" />
                 </Link>
@@ -154,13 +154,13 @@ export function HomeSections() {
                 key={f.title}
                 data-aos="fade-up"
                 data-aos-delay={i * 100}
-                className="bg-white rounded-2xl p-8 border border-border hover:shadow-[var(--shadow-elegant)] transition-shadow"
+                className="card-premium p-8 hover:shadow-[var(--shadow-elegant)] transition-all duration-300"
               >
-                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[var(--navy)] text-[var(--gold)]">
+                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white shadow-md shadow-[var(--electric)]/20">
                   <f.icon className="h-7 w-7" />
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-[var(--navy)]">{f.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                <h3 className="mt-5 text-xl font-bold text-white">{f.title}</h3>
+                <p className="mt-2 text-sm text-[var(--muted-foreground)] leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -184,10 +184,10 @@ export function HomeSections() {
         <div className="container-x grid lg:grid-cols-[1fr_1.4fr] gap-12 items-start">
           <div data-aos="fade-right">
             <span className="eyebrow">FAQ</span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-[var(--navy)] leading-tight">
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white leading-tight">
               Everything you need to know before starting
             </h2>
-            <p className="mt-4 text-muted-foreground">
+            <p className="mt-4 text-[var(--muted-foreground)]">
               Can't find the answer you're looking for? Reach out via the contact page.
             </p>
           </div>
@@ -200,11 +200,11 @@ export function HomeSections() {
                 ["Is mentor support available?", "Yes. Live mentor support is available across all premium tracks and on-demand for free tracks."],
                 ["What are the eligibility criteria?", "Students, graduates, and early professionals are all welcome. Curiosity is the only prerequisite."],
               ].map(([q, a]) => (
-                <AccordionItem key={q} value={q} className="border-b border-border">
-                  <AccordionTrigger className="text-left text-base font-semibold text-[var(--navy)] hover:no-underline">
+                <AccordionItem key={q} value={q} className="border-b border-[var(--cyan)]/10">
+                  <AccordionTrigger className="text-left text-base font-semibold text-white hover:text-[var(--cyan)] hover:no-underline">
                     {q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-sm leading-relaxed">
+                  <AccordionContent className="text-[var(--muted-foreground)] text-sm leading-relaxed">
                     {a}
                   </AccordionContent>
                 </AccordionItem>
@@ -241,21 +241,21 @@ function RoadmapsPreview() {
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {roadmaps.map((r, i) => (
             <div key={r.title} data-aos="fade-right" data-aos-delay={i * 80} className="card-premium p-7">
-              <div className="flex items-center gap-2 text-[var(--gold)] font-semibold text-xs tracking-wider uppercase">
-                <Star className="h-3.5 w-3.5 fill-[var(--gold)]" /> Roadmap
+              <div className="flex items-center gap-2 text-[var(--cyan)] font-semibold text-xs tracking-wider uppercase">
+                <Star className="h-3.5 w-3.5 fill-[var(--cyan)]" /> Roadmap
               </div>
-              <h3 className="mt-3 text-xl font-bold text-[var(--navy)]">{r.title}</h3>
+              <h3 className="mt-3 text-xl font-bold text-white">{r.title}</h3>
               <ol className="mt-5 space-y-2.5">
                 {r.steps.map((s, idx) => (
-                  <li key={s} className="flex items-start gap-3 text-sm text-foreground/85">
-                    <span className="mt-0.5 grid h-5 w-5 place-items-center rounded-full bg-[var(--navy)] text-[10px] font-bold text-[var(--gold)]">{idx + 1}</span>
+                  <li key={s} className="flex items-start gap-3 text-sm text-white/80">
+                    <span className="mt-0.5 grid h-5 w-5 place-items-center rounded-full bg-[var(--electric)] text-[10px] font-bold text-white">{idx + 1}</span>
                     {s}
                   </li>
                 ))}
               </ol>
               <Link
                 to="/roadmaps"
-                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--navy)] hover:text-[var(--gold)] transition-colors"
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--cyan)] hover:text-[var(--electric)] transition-colors"
               >
                 View Full Roadmap <ChevronRight className="h-4 w-4" />
               </Link>
@@ -277,9 +277,9 @@ const tutorials = [
 ];
 
 const levelColor: Record<string, string> = {
-  Beginner: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  Intermediate: "bg-amber-50 text-amber-700 border-amber-200",
-  Advanced: "bg-rose-50 text-rose-700 border-rose-200",
+  Beginner: "bg-emerald-500/15 text-emerald-400 border-emerald-500/25",
+  Intermediate: "bg-amber-500/15 text-amber-400 border-amber-500/25",
+  Advanced: "bg-rose-500/15 text-rose-400 border-rose-500/25",
 };
 
 function TutorialsPreview() {
@@ -294,20 +294,20 @@ function TutorialsPreview() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {tutorials.map((t, i) => (
             <article key={t.title} data-aos="fade-up" data-aos-delay={i * 60} className="card-premium overflow-hidden">
-              <div className="relative aspect-video bg-gradient-to-br from-[var(--navy)] to-[var(--navy)]/80 grid place-items-center">
-                <div className="absolute inset-0 opacity-30 [background:radial-gradient(circle_at_30%_30%,var(--gold),transparent_45%)]" />
-                <div className="relative grid h-14 w-14 place-items-center rounded-full bg-[var(--gold)] text-[var(--navy)] shadow-lg">
-                  <Play className="h-6 w-6 fill-[var(--navy)]" />
+              <div className="relative aspect-video bg-gradient-to-br from-[var(--navy)] to-[var(--navy-mid)] grid place-items-center">
+                <div className="absolute inset-0 opacity-30 [background:radial-gradient(circle_at_30%_30%,var(--electric),transparent_45%)]" />
+                <div className="relative grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white shadow-lg shadow-[var(--electric)]/30">
+                  <Play className="h-6 w-6 fill-white" />
                 </div>
-                <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white/80">{t.cat}</span>
-                <span className="absolute top-3 right-3 text-[10px] font-semibold text-[var(--gold)]">{t.dur}</span>
+                <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white/70">{t.cat}</span>
+                <span className="absolute top-3 right-3 text-[10px] font-semibold text-[var(--cyan)]">{t.dur}</span>
               </div>
               <div className="p-6">
                 <span className={"inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-semibold " + levelColor[t.level]}>
                   {t.level}
                 </span>
-                <h3 className="mt-3 text-lg font-bold text-[var(--navy)] leading-snug">{t.title}</h3>
-                <button className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--navy)] hover:text-[var(--gold)] transition-colors">
+                <h3 className="mt-3 text-lg font-bold text-white leading-snug">{t.title}</h3>
+                <button className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--cyan)] hover:text-[var(--electric)] transition-colors">
                   Watch Tutorial <ChevronRight className="h-4 w-4" />
                 </button>
               </div>
@@ -331,23 +331,23 @@ function InternshipsHighlight({ onApply }: { onApply: (d?: string) => void }) {
   return (
     <section id="community" className="py-20 lg:py-28">
       <div className="container-x">
-        <div className="relative rounded-[2rem] overflow-hidden bg-[var(--navy)] text-white p-10 md:p-14 lg:p-20">
-          <div className="absolute inset-0 opacity-60 [background:radial-gradient(900px_400px_at_90%_-10%,color-mix(in_oklab,var(--gold)_30%,transparent),transparent_60%)]" />
+        <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-br from-[var(--electric)]/10 to-[var(--cyan)]/5 backdrop-blur-sm border border-[var(--cyan)]/15 text-white p-10 md:p-14 lg:p-20">
+          <div className="absolute inset-0 opacity-40 [background:radial-gradient(900px_400px_at_90%_-10%,rgba(37,99,235,0.35),transparent_60%)]" />
           <div className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 items-start">
             <div data-aos="fade-right">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/40 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--gold)]">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--cyan)]/30 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--cyan)]">
                 <Briefcase className="h-3.5 w-3.5" /> Internships
               </span>
               <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                Launch Your Career With <span className="text-[var(--gold)]">Real-World Internships</span>
+                Launch Your Career With <span className="text-gradient-blue">Real-World Internships</span>
               </h2>
-              <p className="mt-5 text-white/75 leading-relaxed max-w-xl">
+              <p className="mt-5 text-white/65 leading-relaxed max-w-xl">
                 Build production-grade projects under expert mentorship across every domain
                 INFYNUX teaches. Apply once, learn for life.
               </p>
               <Button
                 onClick={() => onApply()}
-                className="mt-8 btn-gold rounded-full px-6 py-6 text-sm font-semibold hover:opacity-95"
+                className="mt-8 btn-cta rounded-full px-6 py-6 text-sm font-semibold hover:opacity-95"
               >
                 Apply Now <ArrowRight className="ml-1 h-4 w-4" />
               </Button>
@@ -359,15 +359,15 @@ function InternshipsHighlight({ onApply }: { onApply: (d?: string) => void }) {
                   key={g.group}
                   data-aos="zoom-in"
                   data-aos-delay={i * 80}
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur p-5"
+                  className="rounded-2xl border border-[var(--cyan)]/10 bg-white/[0.04] backdrop-blur p-5"
                 >
-                  <div className="text-sm font-bold text-[var(--gold)] uppercase tracking-wider">{g.group}</div>
+                  <div className="text-sm font-bold text-[var(--cyan)] uppercase tracking-wider">{g.group}</div>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {g.items.map((it) => (
                       <button
                         key={it}
                         onClick={() => onApply(`${g.group} – ${it}`)}
-                        className="text-xs font-semibold px-3 py-1.5 rounded-full border border-white/15 hover:bg-[var(--gold)] hover:text-[var(--navy)] hover:border-[var(--gold)] transition-colors"
+                        className="text-xs font-semibold px-3 py-1.5 rounded-full border border-white/10 text-white/80 hover:bg-[var(--electric)] hover:text-white hover:border-[var(--electric)] hover:shadow-[0_0_12px_rgba(37,99,235,0.3)] transition-all duration-300"
                       >
                         {it}
                       </button>
@@ -400,17 +400,17 @@ function Testimonials() {
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {reviews.map((r, i) => (
             <div key={r.name} data-aos="fade-up" data-aos-delay={i * 100} className="card-premium p-7">
-              <div className="flex gap-1 text-[var(--gold)]">
-                {Array.from({ length: 5 }).map((_, k) => <Star key={k} className="h-4 w-4 fill-[var(--gold)]" />)}
+              <div className="flex gap-1 text-[var(--cyan)]">
+                {Array.from({ length: 5 }).map((_, k) => <Star key={k} className="h-4 w-4 fill-[var(--cyan)]" />)}
               </div>
-              <p className="mt-4 text-foreground/85 leading-relaxed">"{r.text}"</p>
+              <p className="mt-4 text-white/80 leading-relaxed">"{r.text}"</p>
               <div className="mt-6 flex items-center gap-3">
-                <div className="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-[var(--gold)] to-[var(--gold-soft)] text-[var(--navy)] font-bold">
+                <div className="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white font-bold text-sm">
                   {r.name.split(" ").map(n => n[0]).join("")}
                 </div>
                 <div>
-                  <div className="font-semibold text-[var(--navy)]">{r.name}</div>
-                  <div className="text-xs text-muted-foreground">{r.course}</div>
+                  <div className="font-semibold text-white">{r.name}</div>
+                  <div className="text-xs text-[var(--muted-foreground)]">{r.course}</div>
                 </div>
               </div>
             </div>

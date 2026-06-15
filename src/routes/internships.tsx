@@ -48,14 +48,14 @@ function InternshipsPage() {
         <div className="container-x grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {DOMAINS.map((d, i) => (
             <div key={d.title} data-aos="zoom-in" data-aos-delay={i * 60} className="card-premium p-7">
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[var(--gold)]/20 to-[var(--gold)]/5 text-[var(--gold)] border border-[var(--gold)]/20">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[var(--electric)]/20 to-[var(--cyan)]/10 text-[var(--cyan)] border border-[var(--cyan)]/15">
                 <d.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 text-lg font-bold text-[var(--navy)]">{d.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
+              <h3 className="mt-5 text-lg font-bold text-white">{d.title}</h3>
+              <p className="mt-2 text-sm text-[var(--muted-foreground)] leading-relaxed">{d.desc}</p>
               <button
                 onClick={() => apply(d.title)}
-                className="btn-gold mt-6 inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold"
+                className="btn-cta mt-6 inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold"
               >
                 Apply
               </button>

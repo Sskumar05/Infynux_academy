@@ -37,16 +37,16 @@ export const Route = createFileRoute("/roadmaps")({
           {roadmaps.map((r, i) => (
             <div key={r.title} data-aos="fade-up" data-aos-delay={i * 80} className="card-premium p-8">
               <div className="flex items-center gap-3">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--navy)] text-[var(--gold)]">
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white shadow-md shadow-[var(--electric)]/20">
                   <r.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-[var(--navy)]">{r.title}</h3>
+                <h3 className="text-xl font-bold text-white">{r.title}</h3>
               </div>
               <ol className="mt-6 space-y-3">
                 {r.steps.map((s, idx) => (
-                  <li key={s} className="flex items-start gap-3 text-sm text-foreground/85">
-                    <CheckCircle2 className="h-5 w-5 text-[var(--gold)] mt-0.5 shrink-0" />
-                    <span><span className="font-semibold text-[var(--navy)] mr-1">{idx + 1}.</span>{s}</span>
+                  <li key={s} className="flex items-start gap-3 text-sm text-white/80">
+                    <CheckCircle2 className="h-5 w-5 text-[var(--cyan)] mt-0.5 shrink-0" />
+                    <span><span className="font-semibold text-white mr-1">{idx + 1}.</span>{s}</span>
                   </li>
                 ))}
               </ol>

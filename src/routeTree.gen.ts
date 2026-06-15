@@ -9,13 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VerifyCertificateRouteImport } from './routes/verify-certificate'
 import { Route as TutorialsRouteImport } from './routes/tutorials'
 import { Route as RoadmapsRouteImport } from './routes/roadmaps'
 import { Route as InternshipsRouteImport } from './routes/internships'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminIndexRouteImport } from './routes/admin/index'
+import { Route as AdminTutorialsRouteImport } from './routes/admin/tutorials'
+import { Route as AdminRoadmapsRouteImport } from './routes/admin/roadmaps'
+import { Route as AdminLoginRouteImport } from './routes/admin/login'
+import { Route as AdminCertificatesRouteImport } from './routes/admin/certificates'
+import { Route as AdminApplicationsRouteImport } from './routes/admin/applications'
 
+const VerifyCertificateRoute = VerifyCertificateRouteImport.update({
+  id: '/verify-certificate',
+  path: '/verify-certificate',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TutorialsRoute = TutorialsRouteImport.update({
   id: '/tutorials',
   path: '/tutorials',
@@ -36,6 +49,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -46,14 +64,52 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminTutorialsRoute = AdminTutorialsRouteImport.update({
+  id: '/tutorials',
+  path: '/tutorials',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminRoadmapsRoute = AdminRoadmapsRouteImport.update({
+  id: '/roadmaps',
+  path: '/roadmaps',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminCertificatesRoute = AdminCertificatesRouteImport.update({
+  id: '/certificates',
+  path: '/certificates',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminApplicationsRoute = AdminApplicationsRouteImport.update({
+  id: '/applications',
+  path: '/applications',
+  getParentRoute: () => AdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRouteWithChildren
   '/contact': typeof ContactRoute
   '/internships': typeof InternshipsRoute
   '/roadmaps': typeof RoadmapsRoute
   '/tutorials': typeof TutorialsRoute
+  '/verify-certificate': typeof VerifyCertificateRoute
+  '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/certificates': typeof AdminCertificatesRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/roadmaps': typeof AdminRoadmapsRoute
+  '/admin/tutorials': typeof AdminTutorialsRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,48 +118,101 @@ export interface FileRoutesByTo {
   '/internships': typeof InternshipsRoute
   '/roadmaps': typeof RoadmapsRoute
   '/tutorials': typeof TutorialsRoute
+  '/verify-certificate': typeof VerifyCertificateRoute
+  '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/certificates': typeof AdminCertificatesRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/roadmaps': typeof AdminRoadmapsRoute
+  '/admin/tutorials': typeof AdminTutorialsRoute
+  '/admin': typeof AdminIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRouteWithChildren
   '/contact': typeof ContactRoute
   '/internships': typeof InternshipsRoute
   '/roadmaps': typeof RoadmapsRoute
   '/tutorials': typeof TutorialsRoute
+  '/verify-certificate': typeof VerifyCertificateRoute
+  '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/certificates': typeof AdminCertificatesRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/roadmaps': typeof AdminRoadmapsRoute
+  '/admin/tutorials': typeof AdminTutorialsRoute
+  '/admin/': typeof AdminIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/admin'
     | '/contact'
     | '/internships'
     | '/roadmaps'
     | '/tutorials'
+    | '/verify-certificate'
+    | '/admin/applications'
+    | '/admin/certificates'
+    | '/admin/login'
+    | '/admin/roadmaps'
+    | '/admin/tutorials'
+    | '/admin/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/internships' | '/roadmaps' | '/tutorials'
-  id:
-    | '__root__'
+  to:
     | '/'
     | '/about'
     | '/contact'
     | '/internships'
     | '/roadmaps'
     | '/tutorials'
+    | '/verify-certificate'
+    | '/admin/applications'
+    | '/admin/certificates'
+    | '/admin/login'
+    | '/admin/roadmaps'
+    | '/admin/tutorials'
+    | '/admin'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/contact'
+    | '/internships'
+    | '/roadmaps'
+    | '/tutorials'
+    | '/verify-certificate'
+    | '/admin/applications'
+    | '/admin/certificates'
+    | '/admin/login'
+    | '/admin/roadmaps'
+    | '/admin/tutorials'
+    | '/admin/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRouteWithChildren
   ContactRoute: typeof ContactRoute
   InternshipsRoute: typeof InternshipsRoute
   RoadmapsRoute: typeof RoadmapsRoute
   TutorialsRoute: typeof TutorialsRoute
+  VerifyCertificateRoute: typeof VerifyCertificateRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/verify-certificate': {
+      id: '/verify-certificate'
+      path: '/verify-certificate'
+      fullPath: '/verify-certificate'
+      preLoaderRoute: typeof VerifyCertificateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tutorials': {
       id: '/tutorials'
       path: '/tutorials'
@@ -132,6 +241,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -146,17 +262,91 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/tutorials': {
+      id: '/admin/tutorials'
+      path: '/tutorials'
+      fullPath: '/admin/tutorials'
+      preLoaderRoute: typeof AdminTutorialsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/roadmaps': {
+      id: '/admin/roadmaps'
+      path: '/roadmaps'
+      fullPath: '/admin/roadmaps'
+      preLoaderRoute: typeof AdminRoadmapsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/certificates': {
+      id: '/admin/certificates'
+      path: '/certificates'
+      fullPath: '/admin/certificates'
+      preLoaderRoute: typeof AdminCertificatesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/applications': {
+      id: '/admin/applications'
+      path: '/applications'
+      fullPath: '/admin/applications'
+      preLoaderRoute: typeof AdminApplicationsRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
+
+interface AdminRouteChildren {
+  AdminApplicationsRoute: typeof AdminApplicationsRoute
+  AdminCertificatesRoute: typeof AdminCertificatesRoute
+  AdminLoginRoute: typeof AdminLoginRoute
+  AdminRoadmapsRoute: typeof AdminRoadmapsRoute
+  AdminTutorialsRoute: typeof AdminTutorialsRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminApplicationsRoute: AdminApplicationsRoute,
+  AdminCertificatesRoute: AdminCertificatesRoute,
+  AdminLoginRoute: AdminLoginRoute,
+  AdminRoadmapsRoute: AdminRoadmapsRoute,
+  AdminTutorialsRoute: AdminTutorialsRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRouteWithChildren,
   ContactRoute: ContactRoute,
   InternshipsRoute: InternshipsRoute,
   RoadmapsRoute: RoadmapsRoute,
   TutorialsRoute: TutorialsRoute,
+  VerifyCertificateRoute: VerifyCertificateRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

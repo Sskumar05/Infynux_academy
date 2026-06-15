@@ -29,11 +29,11 @@ export const Route = createFileRoute("/about")({
             { icon: Users, title: "Our People", text: "Industry mentors, engineers, and educators who care about your growth." },
           ].map((c, i) => (
             <div key={c.title} data-aos="fade-up" data-aos-delay={i * 80} className="card-premium p-7">
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--navy)] text-[var(--gold)]">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white shadow-md shadow-[var(--electric)]/20">
                 <c.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 text-lg font-bold text-[var(--navy)]">{c.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.text}</p>
+              <h3 className="mt-5 text-lg font-bold text-white">{c.title}</h3>
+              <p className="mt-2 text-sm text-[var(--muted-foreground)] leading-relaxed">{c.text}</p>
             </div>
           ))}
         </div>
@@ -43,10 +43,10 @@ export const Route = createFileRoute("/about")({
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <div data-aos="fade-right">
             <span className="eyebrow">Our Story</span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-[var(--navy)] leading-tight">
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white leading-tight">
               Built by practitioners, for the next generation of builders
             </h2>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
+            <p className="mt-5 text-[var(--muted-foreground)] leading-relaxed">
               INFYNUX Academy was founded with one belief: ambitious learners deserve roadmaps,
               mentors and real-world projects — not just videos. Today we help thousands of
               students transform their careers across five high-impact domains.
@@ -59,9 +59,9 @@ export const Route = createFileRoute("/about")({
               ["120+", "Projects shipped"],
               ["95%", "Recommend us"],
             ].map(([n, l]) => (
-              <div key={l} className="bg-white border border-border rounded-2xl p-6 text-center shadow-sm">
-                <div className="text-3xl font-bold text-gradient-gold">{n}</div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">{l}</div>
+              <div key={l} className="card-premium p-6 text-center">
+                <div className="text-3xl font-bold text-gradient-blue">{n}</div>
+                <div className="text-xs uppercase tracking-wider text-[var(--muted-foreground)] mt-1">{l}</div>
               </div>
             ))}
           </div>

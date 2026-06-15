@@ -19,9 +19,9 @@ const tutorials = [
 ];
 
 const levelColor: Record<string, string> = {
-  Beginner: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  Intermediate: "bg-amber-50 text-amber-700 border-amber-200",
-  Advanced: "bg-rose-50 text-rose-700 border-rose-200",
+  Beginner: "bg-emerald-500/15 text-emerald-400 border-emerald-500/25",
+  Intermediate: "bg-amber-500/15 text-amber-400 border-amber-500/25",
+  Advanced: "bg-rose-500/15 text-rose-400 border-rose-500/25",
 };
 
 export const Route = createFileRoute("/tutorials")({
@@ -54,10 +54,10 @@ function TutorialsPage() {
               <button
                 key={c}
                 onClick={() => setActive(c)}
-                className={"px-4 py-2 rounded-full text-sm font-semibold border transition-colors " +
+                className={"px-4 py-2 rounded-full text-sm font-semibold border transition-all duration-300 " +
                   (active === c
-                    ? "bg-[var(--navy)] text-white border-[var(--navy)]"
-                    : "bg-white border-border text-foreground/80 hover:border-[var(--gold)]")}
+                    ? "bg-[var(--electric)] text-white border-[var(--electric)] shadow-[0_0_15px_rgba(37,99,235,0.3)]"
+                    : "bg-white/5 border-[var(--cyan)]/15 text-white/70 hover:border-[var(--cyan)]/40 hover:text-white")}
               >
                 {c}
               </button>
@@ -66,20 +66,20 @@ function TutorialsPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {visible.map((t, i) => (
               <article key={t.title} data-aos="fade-up" data-aos-delay={i * 50} className="card-premium overflow-hidden">
-                <div className="relative aspect-video bg-gradient-to-br from-[var(--navy)] to-[var(--navy)]/80 grid place-items-center">
-                  <div className="absolute inset-0 opacity-30 [background:radial-gradient(circle_at_30%_30%,var(--gold),transparent_45%)]" />
-                  <div className="relative grid h-14 w-14 place-items-center rounded-full bg-[var(--gold)] text-[var(--navy)] shadow-lg">
-                    <Play className="h-6 w-6 fill-[var(--navy)]" />
+                <div className="relative aspect-video bg-gradient-to-br from-[var(--navy)] to-[var(--navy-mid)] grid place-items-center">
+                  <div className="absolute inset-0 opacity-30 [background:radial-gradient(circle_at_30%_30%,var(--electric),transparent_45%)]" />
+                  <div className="relative grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white shadow-lg shadow-[var(--electric)]/30">
+                    <Play className="h-6 w-6 fill-white" />
                   </div>
-                  <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white/80">{t.cat}</span>
-                  <span className="absolute top-3 right-3 text-[10px] font-semibold text-[var(--gold)]">{t.dur}</span>
+                  <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white/70">{t.cat}</span>
+                  <span className="absolute top-3 right-3 text-[10px] font-semibold text-[var(--cyan)]">{t.dur}</span>
                 </div>
                 <div className="p-6">
                   <span className={"inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-semibold " + levelColor[t.level]}>
                     {t.level}
                   </span>
-                  <h3 className="mt-3 text-lg font-bold text-[var(--navy)] leading-snug">{t.title}</h3>
-                  <button className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--navy)] hover:text-[var(--gold)] transition-colors">
+                  <h3 className="mt-3 text-lg font-bold text-white leading-snug">{t.title}</h3>
+                  <button className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--cyan)] hover:text-[var(--electric)] transition-colors">
                     Watch Tutorial <ChevronRight className="h-4 w-4" />
                   </button>
                 </div>
