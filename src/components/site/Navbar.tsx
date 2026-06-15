@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, GraduationCap } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/INfynux-Logo.png"
 
 const links = [
   { to: "/", label: "Home" },
@@ -34,8 +35,8 @@ export function Navbar() {
     >
       <div className="container-x flex h-18 items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white shadow-md shadow-[var(--electric)]/30">
-            <GraduationCap className="h-5 w-5" />
+          <span >
+            <img src={logo} alt="logo" className="h-10 w-10 object-contain" />
           </span>
           <span className="font-display text-lg font-bold tracking-tight text-white">
             INFYNUX <span className="text-gradient-blue">Academy</span>

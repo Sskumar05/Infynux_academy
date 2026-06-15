@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { GraduationCap, Mail, Phone, MapPin, Github, Linkedin, Twitter, Youtube } from "lucide-react";
+import logo from "@/assets/INfynux-Logo.png"
 
 export function Footer() {
   return (
@@ -7,9 +8,9 @@ export function Footer() {
       <div className="container-x py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2.5 mb-4">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white">
-              <GraduationCap className="h-5 w-5" />
-            </span>
+             <span >
+            <img src={logo} alt="logo" className="h-10 w-10 object-contain" />
+          </span>
             <span className="font-display text-lg font-bold text-white">
               INFYNUX <span className="text-[var(--cyan)]">Academy</span>
             </span>
@@ -66,9 +67,9 @@ export function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-4 text-sm tracking-wider uppercase">Contact</h4>
           <ul className="space-y-3 text-sm text-white/60">
-            <li className="flex items-start gap-2.5"><Mail className="h-4 w-4 mt-0.5 text-[var(--cyan)]" /> hello@infynux.academy</li>
-            <li className="flex items-start gap-2.5"><Phone className="h-4 w-4 mt-0.5 text-[var(--cyan)]" /> +91 98765 43210</li>
-            <li className="flex items-start gap-2.5"><MapPin className="h-4 w-4 mt-0.5 text-[var(--cyan)]" /> Bengaluru, India</li>
+            <li className="flex items-start gap-2.5"><Mail className="h-4 w-4 mt-0.5 text-[var(--cyan)]" /> support@infynuxsolutions.in</li>
+            <li className="flex items-start gap-2.5"><Phone className="h-4 w-4 mt-0.5 text-[var(--cyan)]" /> +91 7010850923</li>
+            <li className="flex items-start gap-2.5"><MapPin className="h-4 w-4 mt-0.5 text-[var(--cyan)]" /> Thiruvarur, Tamil Nadu 610001, India</li>
           </ul>
         </div>
       </div>

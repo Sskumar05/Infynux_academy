@@ -62,10 +62,9 @@ function ContactPage() {
   };
 
   const items = [
-    { icon: Mail, label: "Email", value: "hello@infynux.academy" },
-    { icon: Phone, label: "Phone", value: "+91 98765 43210" },
-    { icon: MessageCircle, label: "WhatsApp", value: "+91 98765 43210" },
-    { icon: MapPin, label: "Location", value: "Bengaluru, India" },
+    { icon: Mail, label: "Email", value: "support@infynuxsolutions.in" },
+    { icon: Phone, label: "Phone", value: "+91 7010850923" },
+    { icon: MapPin, label: "Location", value: "Thiruvarur, Tamil Nadu 610001, India" },
   ];
 
   return (
@@ -93,7 +92,7 @@ function ContactPage() {
             <div className="card-premium overflow-hidden">
               <iframe
                 title="INFYNUX Academy location"
-                src="https://www.google.com/maps?q=Bengaluru&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31355.302778098303!2d79.62399892359004!3d10.779658366783723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a55474ae6fc2777%3A0x815655321cbda800!2sThiruvarur%2C%20Tamil%20Nadu%20610001!5e0!3m2!1sen!2sin!4v1781544287970!5m2!1sen!2sin"
                 className="w-full h-64 border-0 opacity-80"
                 loading="lazy"
               />
