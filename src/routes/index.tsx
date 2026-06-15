@@ -1,29 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteLayout } from "@/components/site/SiteLayout";
+import { HomeSections } from "@/components/site/HomeSections";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "INFYNUX Academy — Build Future-Ready Skills" },
+      { name: "description", content: "Master Web Dev, Cloud, App Dev, AI & Digital Marketing with structured roadmaps, tutorials and real-world internships." },
+      { property: "og:title", content: "INFYNUX Academy — Build Future-Ready Skills" },
+      { property: "og:description", content: "Structured learning paths, tutorials, and internships for tomorrow's tech leaders." },
     ],
   }),
-  component: Index,
+  component: () => (
+    <SiteLayout>
+      <HomeSections />
+    </SiteLayout>
+  ),
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
