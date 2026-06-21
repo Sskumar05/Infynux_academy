@@ -42,22 +42,22 @@ function VerifyCertificatePage() {
 
   return (
     <SiteLayout>
-      <section className="hero-bg pt-16 pb-12">
+      <section className="hero-bg pt-16 pb-12 section-navy">
         <div className="container-x text-center">
           <SectionHeader eyebrow="Verification" title="Verify Certificate" description="Enter the certificate ID to verify its authenticity and details." />
         </div>
       </section>
 
-      <section className="pb-24">
+      <section className="pb-24 pt-12 section-light">
         <div className="container-x max-w-2xl mx-auto">
           <form onSubmit={handleVerify} className="card-premium p-8 grid gap-4">
-            <h3 className="text-xl font-bold text-white text-center mb-2">Certificate ID</h3>
+            <h3 className="text-xl font-bold text-[var(--foreground)] text-center mb-2">Certificate ID</h3>
             <div className="flex gap-3">
               <Input 
                 value={certId} 
                 onChange={(e) => setCertId(e.target.value)} 
                 placeholder="e.g. INF-2026-XXXX" 
-                className="bg-white/5 border-[var(--cyan)]/15 text-white placeholder:text-white/30 h-12 text-lg" 
+                className="bg-transparent border-slate-200 text-[var(--foreground)] placeholder:text-slate-400 h-12 text-lg" 
               />
               <Button type="submit" disabled={loading} className="btn-cta rounded-lg px-6 h-12">
                 {loading ? "..." : <><Search className="h-5 w-5 mr-2" /> Verify</>}
@@ -76,19 +76,19 @@ function VerifyCertificatePage() {
                   <div className="grid gap-4">
                     <div>
                       <div className="text-xs uppercase tracking-wider text-[var(--muted-foreground)] font-semibold">Student Name</div>
-                      <div className="text-white text-lg font-semibold">{result.student_name}</div>
+                      <div className="text-[var(--foreground)] text-lg font-semibold">{result.student_name}</div>
                     </div>
                     <div>
                       <div className="text-xs uppercase tracking-wider text-[var(--muted-foreground)] font-semibold">Course / Program</div>
-                      <div className="text-white text-lg font-semibold">{result.course_name}</div>
+                      <div className="text-[var(--foreground)] text-lg font-semibold">{result.course_name}</div>
                     </div>
                     <div>
                       <div className="text-xs uppercase tracking-wider text-[var(--muted-foreground)] font-semibold">Issue Date</div>
-                      <div className="text-white text-lg font-semibold">{new Date(result.issue_date).toLocaleDateString()}</div>
+                      <div className="text-[var(--foreground)] text-lg font-semibold">{new Date(result.issue_date).toLocaleDateString()}</div>
                     </div>
                     <div>
                       <div className="text-xs uppercase tracking-wider text-[var(--muted-foreground)] font-semibold">Certificate ID</div>
-                      <div className="text-white text-lg font-semibold">{result.certificate_id}</div>
+                      <div className="text-[var(--foreground)] text-lg font-semibold">{result.certificate_id}</div>
                     </div>
                     {result.certificate_url && (
                       <div className="mt-4">

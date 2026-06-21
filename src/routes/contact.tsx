@@ -69,13 +69,13 @@ function ContactPage() {
 
   return (
     <SiteLayout>
-      <section className="hero-bg pt-16 pb-12">
+      <section className="hero-bg pt-16 pb-12 section-navy">
         <div className="container-x text-center">
           <SectionHeader eyebrow="Contact Us" title="Let's build your future together" description="Have a question about programs, internships, or partnerships? We'd love to hear from you." />
         </div>
       </section>
 
-      <section className="pb-24">
+      <section className="pb-24 pt-12 section-light">
         <div className="container-x grid lg:grid-cols-[1fr_1.2fr] gap-10">
           <div data-aos="fade-right" className="space-y-4">
             {items.map((it) => (
@@ -85,7 +85,7 @@ function ContactPage() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-wider text-[var(--muted-foreground)] font-semibold">{it.label}</div>
-                  <div className="text-white font-semibold">{it.value}</div>
+                  <div className="text-[var(--foreground)] font-semibold">{it.value}</div>
                 </div>
               </div>
             ))}
@@ -100,27 +100,27 @@ function ContactPage() {
           </div>
 
           <form data-aos="fade-left" onSubmit={handleSubmit(onSubmit)} className="card-premium p-8 grid gap-4">
-            <h3 className="text-2xl font-bold text-white">Send us a message</h3>
+            <h3 className="text-2xl font-bold text-[var(--foreground)]">Send us a message</h3>
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="grid gap-1.5">
                 <Label className="text-xs font-semibold text-[var(--cyan)] uppercase tracking-wider">Name *</Label>
-                <Input {...register("name")} placeholder="Your name" className="bg-white/5 border-[var(--cyan)]/15 text-white placeholder:text-white/30" />
+                <Input {...register("name")} placeholder="Your name" className="bg-transparent border-slate-200 text-[var(--foreground)] placeholder:text-slate-400" />
                 {errors.name && <span className="text-xs text-destructive">{errors.name.message}</span>}
               </div>
               <div className="grid gap-1.5">
                 <Label className="text-xs font-semibold text-[var(--cyan)] uppercase tracking-wider">Email *</Label>
-                <Input type="email" {...register("email")} placeholder="you@email.com" className="bg-white/5 border-[var(--cyan)]/15 text-white placeholder:text-white/30" />
+                <Input type="email" {...register("email")} placeholder="you@email.com" className="bg-transparent border-slate-200 text-[var(--foreground)] placeholder:text-slate-400" />
                 {errors.email && <span className="text-xs text-destructive">{errors.email.message}</span>}
               </div>
             </div>
             <div className="grid gap-1.5">
               <Label className="text-xs font-semibold text-[var(--cyan)] uppercase tracking-wider">Phone *</Label>
-              <Input type="tel" {...register("phone")} placeholder="+91 ..." className="bg-white/5 border-[var(--cyan)]/15 text-white placeholder:text-white/30" />
+              <Input type="tel" {...register("phone")} placeholder="+91 ..." className="bg-transparent border-slate-200 text-[var(--foreground)] placeholder:text-slate-400" />
               {errors.phone && <span className="text-xs text-destructive">{errors.phone.message}</span>}
             </div>
             <div className="grid gap-1.5">
               <Label className="text-xs font-semibold text-[var(--cyan)] uppercase tracking-wider">Message *</Label>
-              <Textarea rows={5} {...register("message")} placeholder="How can we help?" className="bg-white/5 border-[var(--cyan)]/15 text-white placeholder:text-white/30" />
+              <Textarea rows={5} {...register("message")} placeholder="How can we help?" className="bg-transparent border-slate-200 text-[var(--foreground)] placeholder:text-slate-400" />
               {errors.message && <span className="text-xs text-destructive">{errors.message.message}</span>}
             </div>
             <Button type="submit" disabled={isSubmitting} className="btn-cta rounded-full px-6 self-start">

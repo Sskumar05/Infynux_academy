@@ -14,13 +14,13 @@ export const Route = createFileRoute("/about")({
   }),
   component: () => (
     <SiteLayout>
-      <section className="hero-bg pt-16 pb-12">
+      <section className="hero-bg pt-16 pb-12 section-navy">
         <div className="container-x text-center">
           <SectionHeader eyebrow="About INFYNUX" title="Future-ready learning for every ambitious mind" description="We are an education technology academy on a mission to bridge the gap between classroom learning and industry reality." />
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-16 section-light">
         <div className="container-x grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
             { icon: Target, title: "Our Mission", text: "Make industry-grade tech education accessible, structured, and outcome-driven." },
@@ -32,18 +32,18 @@ export const Route = createFileRoute("/about")({
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white shadow-md shadow-[var(--electric)]/20">
                 <c.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 text-lg font-bold text-white">{c.title}</h3>
+              <h3 className="mt-5 text-lg font-bold text-[var(--foreground)]">{c.title}</h3>
               <p className="mt-2 text-sm text-[var(--muted-foreground)] leading-relaxed">{c.text}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="py-16 bg-[var(--alt)]">
+      <section className="py-16 section-gray">
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <div data-aos="fade-right">
             <span className="eyebrow">Our Story</span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white leading-tight">
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-[var(--foreground)] leading-tight">
               Built by practitioners, for the next generation of builders
             </h2>
             <p className="mt-5 text-[var(--muted-foreground)] leading-relaxed">

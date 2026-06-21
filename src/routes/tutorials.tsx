@@ -42,12 +42,12 @@ function TutorialsPage() {
 
   return (
     <SiteLayout>
-      <section className="hero-bg pt-16 pb-10">
+      <section className="hero-bg pt-16 pb-10 section-navy">
         <div className="container-x text-center">
           <SectionHeader eyebrow="Tutorials Library" title="Learn by building, not just watching" description="Browse curated tutorials across every domain we teach." />
         </div>
       </section>
-      <section className="pb-24">
+      <section className="pb-24 pt-12 section-light">
         <div className="container-x">
           <div className="flex flex-wrap justify-center gap-2 mb-10">
             {CATS.map(c => (
@@ -57,7 +57,7 @@ function TutorialsPage() {
                 className={"px-4 py-2 rounded-full text-sm font-semibold border transition-all duration-300 " +
                   (active === c
                     ? "bg-[var(--electric)] text-white border-[var(--electric)] shadow-[0_0_15px_rgba(37,99,235,0.3)]"
-                    : "bg-white/5 border-[var(--cyan)]/15 text-white/70 hover:border-[var(--cyan)]/40 hover:text-white")}
+                    : "bg-white border-slate-200 text-slate-600 hover:border-[var(--cyan)] hover:text-slate-900")}
               >
                 {c}
               </button>
@@ -78,7 +78,7 @@ function TutorialsPage() {
                   <span className={"inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-semibold " + levelColor[t.level]}>
                     {t.level}
                   </span>
-                  <h3 className="mt-3 text-lg font-bold text-white leading-snug">{t.title}</h3>
+                  <h3 className="mt-3 text-lg font-bold text-[var(--foreground)] leading-snug">{t.title}</h3>
                   <button className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--cyan)] hover:text-[var(--electric)] transition-colors">
                     Watch Tutorial <ChevronRight className="h-4 w-4" />
                   </button>

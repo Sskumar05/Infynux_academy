@@ -23,11 +23,11 @@ export function SectionHeader({
       data-aos="fade-up"
     >
       {eyebrow && <span className="eyebrow mb-4">{eyebrow}</span>}
-      <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-bold text-white leading-tight">
+      <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-bold text-[var(--foreground)] leading-tight">
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-muted-foreground text-base md:text-lg leading-relaxed">
+        <p className="mt-4 text-[var(--muted-foreground)] text-base md:text-lg leading-relaxed">
           {description}
         </p>
       )}

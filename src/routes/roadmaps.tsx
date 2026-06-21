@@ -27,12 +27,12 @@ export const Route = createFileRoute("/roadmaps")({
   }),
   component: () => (
     <SiteLayout>
-      <section className="hero-bg pt-16 pb-12">
+      <section className="hero-bg pt-16 pb-12 section-navy">
         <div className="container-x text-center">
           <SectionHeader eyebrow="Learning Roadmaps" title="Pick your path. Master it end to end." description="Roadmaps designed by industry experts. Each step is curated, actionable, and project-driven." />
         </div>
       </section>
-      <section className="pb-24">
+      <section className="pb-24 pt-12 section-light">
         <div className="container-x grid gap-8 lg:grid-cols-2">
           {roadmaps.map((r, i) => (
             <div key={r.title} data-aos="fade-up" data-aos-delay={i * 80} className="card-premium p-8">
@@ -40,13 +40,13 @@ export const Route = createFileRoute("/roadmaps")({
                 <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white shadow-md shadow-[var(--electric)]/20">
                   <r.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-white">{r.title}</h3>
+                <h3 className="text-xl font-bold text-[var(--foreground)]">{r.title}</h3>
               </div>
               <ol className="mt-6 space-y-3">
                 {r.steps.map((s, idx) => (
-                  <li key={s} className="flex items-start gap-3 text-sm text-white/80">
+                  <li key={s} className="flex items-start gap-3 text-sm text-[var(--foreground)]/80">
                     <CheckCircle2 className="h-5 w-5 text-[var(--cyan)] mt-0.5 shrink-0" />
-                    <span><span className="font-semibold text-white mr-1">{idx + 1}.</span>{s}</span>
+                    <span><span className="font-semibold text-[var(--foreground)] mr-1">{idx + 1}.</span>{s}</span>
                   </li>
                 ))}
               </ol>

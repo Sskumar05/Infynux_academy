@@ -40,7 +40,7 @@ export function HomeSections() {
   return (
     <>
       {/* HERO */}
-      <section className="hero-bg relative overflow-hidden">
+      <section className="hero-bg section-navy relative overflow-hidden">
         <div className="container-x grid lg:grid-cols-2 gap-12 lg:gap-16 items-center pt-12 lg:pt-20 pb-16 lg:pb-24">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -109,7 +109,7 @@ export function HomeSections() {
       </section>
 
       {/* DOMAINS */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28 section-light">
         <div className="container-x">
           <SectionHeader
             eyebrow="Featured Domains"
@@ -127,7 +127,7 @@ export function HomeSections() {
                 <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[var(--electric)]/20 to-[var(--cyan)]/10 text-[var(--cyan)] border border-[var(--cyan)]/15 group-hover:bg-[var(--electric)] group-hover:text-white group-hover:border-[var(--electric)] group-hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all duration-300">
                   <d.icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-white">{d.title}</h3>
+                <h3 className="mt-5 text-xl font-bold text-[var(--foreground)]">{d.title}</h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-[var(--muted-foreground)]">{d.desc}</p>
                 <Link
                   to="/roadmaps"
@@ -142,7 +142,7 @@ export function HomeSections() {
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="py-20 lg:py-24 bg-[var(--alt)]">
+      <section className="py-20 lg:py-24 section-gray">
         <div className="container-x">
           <SectionHeader
             eyebrow="Why Choose INFYNUX"
@@ -159,7 +159,7 @@ export function HomeSections() {
                 <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white shadow-md shadow-[var(--electric)]/20">
                   <f.icon className="h-7 w-7" />
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-white">{f.title}</h3>
+                <h3 className="mt-5 text-xl font-bold text-[var(--foreground)]">{f.title}</h3>
                 <p className="mt-2 text-sm text-[var(--muted-foreground)] leading-relaxed">{f.desc}</p>
               </div>
             ))}
@@ -180,11 +180,11 @@ export function HomeSections() {
       <Testimonials />
 
       {/* FAQ */}
-      <section className="py-20 lg:py-24 bg-[var(--alt)]">
+      <section className="py-20 lg:py-24 section-navy">
         <div className="container-x grid lg:grid-cols-[1fr_1.4fr] gap-12 items-start">
           <div data-aos="fade-right">
             <span className="eyebrow">FAQ</span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white leading-tight">
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-[var(--foreground)] leading-tight">
               Everything you need to know before starting
             </h2>
             <p className="mt-4 text-[var(--muted-foreground)]">
@@ -201,7 +201,7 @@ export function HomeSections() {
                 ["What are the eligibility criteria?", "Students, graduates, and early professionals are all welcome. Curiosity is the only prerequisite."],
               ].map(([q, a]) => (
                 <AccordionItem key={q} value={q} className="border-b border-[var(--cyan)]/10">
-                  <AccordionTrigger className="text-left text-base font-semibold text-white hover:text-[var(--cyan)] hover:no-underline">
+                  <AccordionTrigger className="text-left text-base font-semibold text-[var(--foreground)] hover:text-[var(--cyan)] hover:no-underline">
                     {q}
                   </AccordionTrigger>
                   <AccordionContent className="text-[var(--muted-foreground)] text-sm leading-relaxed">
@@ -231,7 +231,7 @@ const roadmaps = [
 
 function RoadmapsPreview() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20 lg:py-28 section-light">
       <div className="container-x">
         <SectionHeader
           eyebrow="Learning Roadmaps"
@@ -244,10 +244,10 @@ function RoadmapsPreview() {
               <div className="flex items-center gap-2 text-[var(--cyan)] font-semibold text-xs tracking-wider uppercase">
                 <Star className="h-3.5 w-3.5 fill-[var(--cyan)]" /> Roadmap
               </div>
-              <h3 className="mt-3 text-xl font-bold text-white">{r.title}</h3>
+              <h3 className="mt-3 text-xl font-bold text-[var(--foreground)]">{r.title}</h3>
               <ol className="mt-5 space-y-2.5">
                 {r.steps.map((s, idx) => (
-                  <li key={s} className="flex items-start gap-3 text-sm text-white/80">
+                  <li key={s} className="flex items-start gap-3 text-sm text-[var(--foreground)]/80">
                     <span className="mt-0.5 grid h-5 w-5 place-items-center rounded-full bg-[var(--electric)] text-[10px] font-bold text-white">{idx + 1}</span>
                     {s}
                   </li>
@@ -284,7 +284,7 @@ const levelColor: Record<string, string> = {
 
 function TutorialsPreview() {
   return (
-    <section className="py-20 lg:py-24 bg-[var(--alt)]">
+    <section className="py-20 lg:py-24 section-navy">
       <div className="container-x">
         <SectionHeader
           eyebrow="Tutorials"
@@ -329,9 +329,9 @@ const internshipDomains = [
 
 function InternshipsHighlight({ onApply }: { onApply: (d?: string) => void }) {
   return (
-    <section id="community" className="py-20 lg:py-28">
+    <section id="community" className="py-20 lg:py-28 section-light">
       <div className="container-x">
-        <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-br from-[var(--electric)]/10 to-[var(--cyan)]/5 backdrop-blur-sm border border-[var(--cyan)]/15 text-white p-10 md:p-14 lg:p-20">
+        <div className="relative rounded-[2rem] overflow-hidden section-navy bg-[var(--navy)] text-white p-10 md:p-14 lg:p-20">
           <div className="absolute inset-0 opacity-40 [background:radial-gradient(900px_400px_at_90%_-10%,rgba(37,99,235,0.35),transparent_60%)]" />
           <div className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 items-start">
             <div data-aos="fade-right">
@@ -391,7 +391,7 @@ const reviews = [
 
 function Testimonials() {
   return (
-    <section className="py-20 lg:py-24">
+    <section className="py-20 lg:py-24 section-gray">
       <div className="container-x">
         <SectionHeader
           eyebrow="Student Stories"
@@ -403,13 +403,13 @@ function Testimonials() {
               <div className="flex gap-1 text-[var(--cyan)]">
                 {Array.from({ length: 5 }).map((_, k) => <Star key={k} className="h-4 w-4 fill-[var(--cyan)]" />)}
               </div>
-              <p className="mt-4 text-white/80 leading-relaxed">"{r.text}"</p>
+              <p className="mt-4 text-[var(--foreground)]/80 leading-relaxed">"{r.text}"</p>
               <div className="mt-6 flex items-center gap-3">
                 <div className="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-[var(--electric)] to-[var(--cyan)] text-white font-bold text-sm">
                   {r.name.split(" ").map(n => n[0]).join("")}
                 </div>
                 <div>
-                  <div className="font-semibold text-white">{r.name}</div>
+                  <div className="font-semibold text-[var(--foreground)]">{r.name}</div>
                   <div className="text-xs text-[var(--muted-foreground)]">{r.course}</div>
                 </div>
               </div>
